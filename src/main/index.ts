@@ -1,10 +1,12 @@
 import { app, BrowserWindow } from 'electron';
 import { createWindow } from './window';
+import { setupMenu } from './menu';
 
 let mainWindow: BrowserWindow | null = null;
 
 app.on('ready', () => {
   mainWindow = createWindow();
+  setupMenu(mainWindow);
 });
 
 app.on('window-all-closed', () => {
@@ -18,6 +20,3 @@ app.on('activate', () => {
     mainWindow = createWindow();
   }
 });
-
-// TODO: Register IPC handlers (file-handlers.ts, export-handlers.ts)
-// TODO: Set up menu (menu.ts)
