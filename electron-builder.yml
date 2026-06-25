@@ -1,0 +1,21 @@
+appId: com.inkwell.app
+productName: Inkwell
+copyright: Private — not for distribution
+directories:
+  output: dist
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico
+files:
+  - dist-electron/**
+  - dist-renderer/**
+  - package.json
+asarUnpack:
+  - "**/*.node"
